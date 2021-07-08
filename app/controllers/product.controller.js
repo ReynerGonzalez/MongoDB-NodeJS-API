@@ -12,7 +12,7 @@ exports.create = (req, res) => {
     // Create a Product
     const product = new Product({
         name: req.body.name, 
-        content: req.body.description,
+        description: req.body.description,
         price: req.body.price,
         status: req.body.status,
     });
@@ -74,7 +74,7 @@ exports.update = (req, res) => {
     // Find product and update it with the request body
     Product.findByIdAndUpdate(req.params.productId, {
         name: req.body.name, 
-        content: req.body.description,
+        description: req.body.description,
         price: req.body.price,
         status: req.body.status,
     }, {new: true})
